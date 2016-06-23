@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Rec-kT-BdR">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="MfX-pV-VdF">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="This is a Note Pad!" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="AXs-VI-EJJ">
-                                <rect key="frame" x="20" y="114" width="560" height="563"/>
+                                <rect key="frame" x="20" y="104" width="560" height="573"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -37,14 +37,14 @@
                             <constraint firstItem="h7x-hr-Dp4" firstAttribute="trailing" secondItem="t0a-jt-o1k" secondAttribute="trailingMargin" id="CYf-LW-3dW"/>
                             <constraint firstItem="h7x-hr-Dp4" firstAttribute="leading" secondItem="t0a-jt-o1k" secondAttribute="leadingMargin" id="R7F-Od-LZS"/>
                             <constraint firstItem="h7x-hr-Dp4" firstAttribute="top" secondItem="rkg-3B-H9k" secondAttribute="bottom" id="Ujx-Uz-BJs"/>
-                            <constraint firstItem="AXs-VI-EJJ" firstAttribute="top" secondItem="h7x-hr-Dp4" secondAttribute="bottom" constant="20" id="gYL-Xe-ga5"/>
+                            <constraint firstItem="AXs-VI-EJJ" firstAttribute="top" secondItem="h7x-hr-Dp4" secondAttribute="bottom" constant="10" id="gYL-Xe-ga5"/>
                             <constraint firstAttribute="bottomMargin" secondItem="AXs-VI-EJJ" secondAttribute="bottom" constant="-77" id="qe7-Fe-Svv"/>
                         </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vAU-SB-u1k" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1426" y="971"/>
+            <point key="canvasLocation" x="2130" y="267"/>
         </scene>
         <!--Notes-->
         <scene sceneID="dVN-r5-8ll">
@@ -79,6 +79,7 @@
                                 <connections>
                                     <outlet property="noteModificationTimeLabel" destination="FV3-sw-Zqj" id="VCN-a4-nGG"/>
                                     <outlet property="noteTitleLabel" destination="YjE-J4-iJm" id="P4Q-Th-pi3"/>
+                                    <segue destination="Rec-kT-BdR" kind="show" identifier="displayNote" id="kct-e0-G68"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -105,7 +106,6 @@
                     <nil name="viewControllers"/>
                     <connections>
                         <segue destination="u2p-Xo-LIX" kind="relationship" relationship="rootViewController" id="KbH-LT-HZX"/>
-                        <segue destination="Rec-kT-BdR" kind="show" id="ejP-uw-MrR"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rzx-h8-SUF" userLabel="First Responder" sceneMemberID="firstResponder"/>
