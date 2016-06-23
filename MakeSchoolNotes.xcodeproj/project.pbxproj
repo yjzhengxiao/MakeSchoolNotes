@@ -19,6 +19,7 @@
 		65BF36611D07D9D800CB1BB3 /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 65BF365E1D07D9D800CB1BB3 /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		65BF36621D07D9D800CB1BB3 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65BF365F1D07D9D800CB1BB3 /* RealmSwift.framework */; };
 		65BF36631D07D9D800CB1BB3 /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 65BF365F1D07D9D800CB1BB3 /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E191AF671D1C8F3A00D9F5B1 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = E191AF661D1C8F3A00D9F5B1 /* Note.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -49,6 +50,7 @@
 		2E4A07B01C42F599007F415F /* ListNotesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListNotesTableViewCell.swift; sourceTree = "<group>"; };
 		65BF365E1D07D9D800CB1BB3 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Frameworks/Realm.framework; sourceTree = "<group>"; };
 		65BF365F1D07D9D800CB1BB3 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Frameworks/RealmSwift.framework; sourceTree = "<group>"; };
+		E191AF661D1C8F3A00D9F5B1 /* Note.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Note.swift; path = Models/Note.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +95,7 @@
 				2E4A07A71C42F3F2007F415F /* Models */,
 				2E4A07931C42F3B0007F415F /* AppDelegate.swift */,
 				2E4A07971C42F3B0007F415F /* Main.storyboard */,
+				E191AF661D1C8F3A00D9F5B1 /* Note.swift */,
 				2E4A079A1C42F3B0007F415F /* Assets.xcassets */,
 				2E4A079C1C42F3B0007F415F /* LaunchScreen.storyboard */,
 				2E4A079F1C42F3B0007F415F /* Info.plist */,
@@ -219,6 +222,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2E4A07B11C42F599007F415F /* ListNotesTableViewCell.swift in Sources */,
+				E191AF671D1C8F3A00D9F5B1 /* Note.swift in Sources */,
 				2E4A07AF1C42F539007F415F /* NSDate+convertToString.swift in Sources */,
 				2E4A07AB1C42F497007F415F /* DisplayNoteViewController.swift in Sources */,
 				2E4A07941C42F3B0007F415F /* AppDelegate.swift in Sources */,

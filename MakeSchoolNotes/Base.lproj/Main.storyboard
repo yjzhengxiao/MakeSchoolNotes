@@ -6,7 +6,7 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Display Note View Controller-->
+        <!--Title-->
         <scene sceneID="u1x-Gw-eGr">
             <objects>
                 <viewController id="Rec-kT-BdR" customClass="DisplayNoteViewController" customModule="MakeSchoolNotes" customModuleProvider="target" sceneMemberID="viewController">
@@ -19,30 +19,56 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="This is a Note Pad!" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="AXs-VI-EJJ">
-                                <rect key="frame" x="20" y="104" width="560" height="573"/>
+                                <rect key="frame" x="20" y="104" width="560" height="476"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Hello from Xiao" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="h7x-hr-Dp4">
-                                <rect key="frame" x="20" y="64" width="560" height="30"/>
+                                <rect key="frame" x="20" y="64" width="560" height="40"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="bottomMargin" secondItem="AXs-VI-EJJ" secondAttribute="bottom" constant="20" id="7Sj-4F-uDK"/>
                             <constraint firstItem="h7x-hr-Dp4" firstAttribute="trailing" secondItem="AXs-VI-EJJ" secondAttribute="trailing" id="9dj-sZ-Iu0"/>
                             <constraint firstItem="h7x-hr-Dp4" firstAttribute="leading" secondItem="AXs-VI-EJJ" secondAttribute="leading" id="BnJ-LJ-4wb"/>
+                            <constraint firstItem="AXs-VI-EJJ" firstAttribute="top" secondItem="rkg-3B-H9k" secondAttribute="bottom" constant="40" id="CUh-ac-Sme"/>
                             <constraint firstItem="h7x-hr-Dp4" firstAttribute="trailing" secondItem="t0a-jt-o1k" secondAttribute="trailingMargin" id="CYf-LW-3dW"/>
                             <constraint firstItem="h7x-hr-Dp4" firstAttribute="leading" secondItem="t0a-jt-o1k" secondAttribute="leadingMargin" id="R7F-Od-LZS"/>
                             <constraint firstItem="h7x-hr-Dp4" firstAttribute="top" secondItem="rkg-3B-H9k" secondAttribute="bottom" id="Ujx-Uz-BJs"/>
-                            <constraint firstItem="AXs-VI-EJJ" firstAttribute="top" secondItem="h7x-hr-Dp4" secondAttribute="bottom" constant="10" id="gYL-Xe-ga5"/>
+                            <constraint firstItem="AXs-VI-EJJ" firstAttribute="top" secondItem="h7x-hr-Dp4" secondAttribute="bottom" id="gYL-Xe-ga5"/>
+                            <constraint firstItem="AXs-VI-EJJ" firstAttribute="top" secondItem="h7x-hr-Dp4" secondAttribute="bottom" id="kh4-5F-8RJ"/>
                             <constraint firstAttribute="bottomMargin" secondItem="AXs-VI-EJJ" secondAttribute="bottom" constant="-77" id="qe7-Fe-Svv"/>
+                            <constraint firstItem="AXs-VI-EJJ" firstAttribute="top" secondItem="h7x-hr-Dp4" secondAttribute="bottom" constant="10" id="xUt-Z4-Phh"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="AXs-VI-EJJ" secondAttribute="bottom" constant="-77" id="zEk-k9-wo6"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="gYL-Xe-ga5"/>
+                                <exclude reference="qe7-Fe-Svv"/>
+                                <exclude reference="xUt-Z4-Phh"/>
+                                <exclude reference="zEk-k9-wo6"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <navigationItem key="navigationItem" title="Title" id="xQE-hO-PxC">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="wK9-62-bej">
+                            <connections>
+                                <segue destination="Uuc-fo-aEJ" kind="unwind" identifier="Cancel" unwindAction="unwindToListNotesViewController:" id="KuY-7p-pE5"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="hhw-MP-oV2">
+                            <connections>
+                                <segue destination="Uuc-fo-aEJ" kind="unwind" identifier="Save" unwindAction="unwindToListNotesViewController:" id="FC4-1n-Dg4"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vAU-SB-u1k" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="Uuc-fo-aEJ" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2130" y="267"/>
         </scene>
@@ -88,7 +114,13 @@
                             <outlet property="delegate" destination="u2p-Xo-LIX" id="msW-Ug-yhm"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Notes" id="kqF-Z5-sHo"/>
+                    <navigationItem key="navigationItem" title="Notes" id="kqF-Z5-sHo">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="0vl-py-LLX">
+                            <connections>
+                                <segue destination="Rec-kT-BdR" kind="show" identifier="addNote" id="5d2-iB-YpR"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dXi-TP-ue3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -113,4 +145,7 @@
             <point key="canvasLocation" x="563" y="267"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="5d2-iB-YpR"/>
+    </inferredMetricsTieBreakers>
 </document>
