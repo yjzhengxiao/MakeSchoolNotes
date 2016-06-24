@@ -9,6 +9,8 @@
 import UIKit
 
 class DisplayNoteViewController: UIViewController {
+    
+    var note: Note?
         
     @IBOutlet weak var noteTitleTextField: UITextField!
     @IBOutlet weak var noteContentTextView: UITextView!
@@ -19,35 +21,40 @@ class DisplayNoteViewController: UIViewController {
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
-        // Some printing for debugging.
-        if let identifier = segue.identifier {
-            if identifier == "Cancel" {
-                print("Cancel button tapped")
-            } else if identifier == "Save" {
-                print("Save button tapped")
-                
-                // Performe the note saving function
-                let note = Note()
-    
-                note.title = noteTitleTextField.text ?? ""
-                note.content = noteContentTextView.text
-                note.modificationTime = NSDate()
-                
+        let listNotesTableViewController = segue.destinationViewController as! ListNotesTableViewController
+        if segue.identifier == "Save" {
+            if let note = note {
                 // 1
-                let listNotesTableViewController = segue.destinationViewController as! ListNotesTableViewController
+                note.title = noteTitleTextField.text ?? ""
+                note.content = noteContentTextView.text ?? ""
                 // 2
-                listNotesTableViewController.notes.append(note)
+                listNotesTableViewController.tableView.reloadData()
+            } else {
+                // 3
+                let newNote = Note()
+                newNote.title = noteTitleTextField.text ?? ""
+                newNote.content = noteContentTextView.text ?? ""
+                newNote.modificationTime = NSDate()
+                listNotesTableViewController.notes.append(newNote)
             }
         }
-        
+        //If cancel do nothing
         
     }
     
     // Rest the note view to empty! Rest everything befroe view appear!
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        noteTitleTextField.text = "“title here!”"
-        noteContentTextView.text = "# Please enter the text from here!"
+        
+        // 1
+        if let note = note {
+            // 2
+            noteTitleTextField.text = note.title
+            noteContentTextView.text = note.content
+        } else {
+            noteTitleTextField.text = "“title here!”"
+            noteContentTextView.text = "# Please enter the text from here!"
+        }
     }
     
 }

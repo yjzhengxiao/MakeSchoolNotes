@@ -49,17 +49,23 @@ class ListNotesTableViewController: UITableViewController {
     
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        
-        // Testing code.
         if let identifier = segue.identifier {
-            // 2
             if identifier == "displayNote" {
                 print("Table view cell tapped")
+                
+                // 1
+                let indexPath = tableView.indexPathForSelectedRow!
+                // 2
+                let note = notes[indexPath.row]
+                // 3
+                let displayNoteViewController = segue.destinationViewController as! DisplayNoteViewController
+                // 4
+                displayNoteViewController.note = note
+                
             } else if identifier == "addNote" {
                 print("+ button tapped")
             }
         }
-        
     }
     
     @IBAction func unwindToListNotesViewController(segue: UIStoryboardSegue) {
