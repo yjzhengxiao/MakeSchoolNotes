@@ -41,7 +41,7 @@ class DisplayNoteViewController: UIViewController {
             }
         } //If cancel do nothing
         
-        // Retrieving Note from the Data Persistency Store! 
+        // Retrieving Note from the Data Persistency Store!
         listNotesTableViewController.notes = RealmHelper.retrieveNotes()
     }
     
