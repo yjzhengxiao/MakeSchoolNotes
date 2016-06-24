@@ -116,6 +116,7 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" red="1" green="0.80000001190000003" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <outlet property="noteModificationTimeLabel" destination="FV3-sw-Zqj" id="VCN-a4-nGG"/>
                                     <outlet property="noteTitleLabel" destination="YjE-J4-iJm" id="P4Q-Th-pi3"/>

@@ -20,6 +20,7 @@
 		65BF36621D07D9D800CB1BB3 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65BF365F1D07D9D800CB1BB3 /* RealmSwift.framework */; };
 		65BF36631D07D9D800CB1BB3 /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 65BF365F1D07D9D800CB1BB3 /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E191AF671D1C8F3A00D9F5B1 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = E191AF661D1C8F3A00D9F5B1 /* Note.swift */; };
+		E191AF691D1D056B00D9F5B1 /* RealmHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E191AF681D1D056B00D9F5B1 /* RealmHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -51,6 +52,7 @@
 		65BF365E1D07D9D800CB1BB3 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Frameworks/Realm.framework; sourceTree = "<group>"; };
 		65BF365F1D07D9D800CB1BB3 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Frameworks/RealmSwift.framework; sourceTree = "<group>"; };
 		E191AF661D1C8F3A00D9F5B1 /* Note.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Note.swift; path = Models/Note.swift; sourceTree = "<group>"; };
+		E191AF681D1D056B00D9F5B1 /* RealmHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +132,7 @@
 		2E4A07AC1C42F4EB007F415F /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				E191AF681D1D056B00D9F5B1 /* RealmHelper.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -225,6 +228,7 @@
 				E191AF671D1C8F3A00D9F5B1 /* Note.swift in Sources */,
 				2E4A07AF1C42F539007F415F /* NSDate+convertToString.swift in Sources */,
 				2E4A07AB1C42F497007F415F /* DisplayNoteViewController.swift in Sources */,
+				E191AF691D1D056B00D9F5B1 /* RealmHelper.swift in Sources */,
 				2E4A07941C42F3B0007F415F /* AppDelegate.swift in Sources */,
 				2E4A07A91C42F40B007F415F /* ListNotesTableViewController.swift in Sources */,
 			);
