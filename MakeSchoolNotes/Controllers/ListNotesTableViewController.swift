@@ -7,10 +7,12 @@
 //
 
 import UIKit
+import RealmSwift
 
 class ListNotesTableViewController: UITableViewController {
-
-    var notes = [Note]() {
+    
+    // Refresh the Results Note Array for display
+    var notes: Results<Note>! {
         didSet {
             tableView.reloadData()
         }
@@ -43,8 +45,10 @@ class ListNotesTableViewController: UITableViewController {
         return cell
     }
     
+    // Retrieving all the datas
     override func viewDidLoad() {
         super.viewDidLoad()
+        notes = RealmHelper.retrieveNotes()
     }
     
     
@@ -69,14 +73,13 @@ class ListNotesTableViewController: UITableViewController {
     }
     
     // Deleting the note
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        
-        // Deleting Style.
+    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath)
+    {
         if editingStyle == .Delete {
-            // 3
-            notes.removeAtIndex(indexPath.row)
-            // Refresh the page.
-            tableView.reloadData()
+            //1
+            RealmHelper.deleteNote(notes[indexPath.row])
+            //2
+            notes = RealmHelper.retrieveNotes()
         }
     }
     

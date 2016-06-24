@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class DisplayNoteViewController: UIViewController {
     
@@ -20,26 +21,28 @@ class DisplayNoteViewController: UIViewController {
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        
         let listNotesTableViewController = segue.destinationViewController as! ListNotesTableViewController
+        
         if segue.identifier == "Save" {
             if let note = note {
-                // 1
-                note.title = noteTitleTextField.text ?? ""
-                note.content = noteContentTextView.text ?? ""
-                // 2
-                listNotesTableViewController.tableView.reloadData()
-            } else {
-                // 3
+                // Updating the note with new note in the data persistency store SQLlite.
                 let newNote = Note()
                 newNote.title = noteTitleTextField.text ?? ""
                 newNote.content = noteContentTextView.text ?? ""
-                newNote.modificationTime = NSDate()
-                listNotesTableViewController.notes.append(newNote)
+                RealmHelper.updateNote(note, newNote: newNote)
+            } else {
+                // if note does not exist, create new note
+                let note = Note()
+                note.title = noteTitleTextField.text ?? ""
+                note.content = noteContentTextView.text ?? ""
+                note.modificationTime = NSDate()
+                // Adding Note for Data Persistence.
+                RealmHelper.addNote(note)
             }
-        }
-        //If cancel do nothing
+        } //If cancel do nothing
         
+        // Retrieving Note from the Data Persistency Store! 
+        listNotesTableViewController.notes = RealmHelper.retrieveNotes()
     }
     
     // Rest the note view to empty! Rest everything befroe view appear!
