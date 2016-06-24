@@ -1,23 +1,27 @@
 //
 //  ListNotesTableViewController.swift
 //  MakeSchoolNotes
-//
-//  Created by Chris Orcutt on 1/10/16.
 //  Copyright © 2016 MakeSchool. All rights reserved.
+
+// Created by Xiao Zheng.
 //
 
 import UIKit
 
 class ListNotesTableViewController: UITableViewController {
+
+    var notes = [Note]() {
+        didSet {
+            tableView.reloadData()
+        }
+    }
     
-    var notes = [Note]()
-    
-    // 1
+    // Generating the corresponding note
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return notes.count
     }
     
-    // 2
+    // Populate the each row with note's title and date
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         // The indexPath is an argument that was passed into cellForRowAtIndexPath and is how the table view tells us what row it 
@@ -46,7 +50,7 @@ class ListNotesTableViewController: UITableViewController {
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
-        // 1
+        // Testing code.
         if let identifier = segue.identifier {
             // 2
             if identifier == "displayNote" {
@@ -55,6 +59,7 @@ class ListNotesTableViewController: UITableViewController {
                 print("+ button tapped")
             }
         }
+        
     }
     
     @IBAction func unwindToListNotesViewController(segue: UIStoryboardSegue) {

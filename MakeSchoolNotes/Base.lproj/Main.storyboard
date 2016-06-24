@@ -9,7 +9,7 @@
         <!--Title-->
         <scene sceneID="u1x-Gw-eGr">
             <objects>
-                <viewController id="Rec-kT-BdR" customClass="DisplayNoteViewController" customModule="MakeSchoolNotes" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="Rec-kT-BdR" customClass="DisplayNoteViewController" customModule="MakeSchoolNotes" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="rkg-3B-H9k"/>
                         <viewControllerLayoutGuide type="bottom" id="Vqs-bx-rAp"/>
@@ -18,36 +18,46 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="This is a Note Pad!" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="AXs-VI-EJJ">
-                                <rect key="frame" x="20" y="104" width="560" height="476"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="# Please enter the text from here!" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="AXs-VI-EJJ">
+                                <rect key="frame" x="20" y="94" width="560" height="486"/>
+                                <color key="backgroundColor" red="0.40134263038635254" green="0.65999996662139893" blue="0.81286561489105225" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Hello from Xiao" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="h7x-hr-Dp4">
-                                <rect key="frame" x="20" y="64" width="560" height="40"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="“Enter the title over here”" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="h7x-hr-Dp4">
+                                <rect key="frame" x="20" y="64" width="560" height="30"/>
+                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="18"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="AXs-VI-EJJ" firstAttribute="top" secondItem="h7x-hr-Dp4" secondAttribute="bottom" constant="10" id="4gr-G6-6kF"/>
                             <constraint firstAttribute="bottomMargin" secondItem="AXs-VI-EJJ" secondAttribute="bottom" constant="20" id="7Sj-4F-uDK"/>
                             <constraint firstItem="h7x-hr-Dp4" firstAttribute="trailing" secondItem="AXs-VI-EJJ" secondAttribute="trailing" id="9dj-sZ-Iu0"/>
                             <constraint firstItem="h7x-hr-Dp4" firstAttribute="leading" secondItem="AXs-VI-EJJ" secondAttribute="leading" id="BnJ-LJ-4wb"/>
                             <constraint firstItem="AXs-VI-EJJ" firstAttribute="top" secondItem="rkg-3B-H9k" secondAttribute="bottom" constant="40" id="CUh-ac-Sme"/>
                             <constraint firstItem="h7x-hr-Dp4" firstAttribute="trailing" secondItem="t0a-jt-o1k" secondAttribute="trailingMargin" id="CYf-LW-3dW"/>
                             <constraint firstItem="h7x-hr-Dp4" firstAttribute="leading" secondItem="t0a-jt-o1k" secondAttribute="leadingMargin" id="R7F-Od-LZS"/>
+                            <constraint firstItem="AXs-VI-EJJ" firstAttribute="top" secondItem="h7x-hr-Dp4" secondAttribute="bottom" id="RnX-H1-fVc"/>
                             <constraint firstItem="h7x-hr-Dp4" firstAttribute="top" secondItem="rkg-3B-H9k" secondAttribute="bottom" id="Ujx-Uz-BJs"/>
                             <constraint firstItem="AXs-VI-EJJ" firstAttribute="top" secondItem="h7x-hr-Dp4" secondAttribute="bottom" id="gYL-Xe-ga5"/>
+                            <constraint firstItem="AXs-VI-EJJ" firstAttribute="top" secondItem="h7x-hr-Dp4" secondAttribute="bottom" id="kKa-wj-ztK"/>
                             <constraint firstItem="AXs-VI-EJJ" firstAttribute="top" secondItem="h7x-hr-Dp4" secondAttribute="bottom" id="kh4-5F-8RJ"/>
                             <constraint firstAttribute="bottomMargin" secondItem="AXs-VI-EJJ" secondAttribute="bottom" constant="-77" id="qe7-Fe-Svv"/>
                             <constraint firstItem="AXs-VI-EJJ" firstAttribute="top" secondItem="h7x-hr-Dp4" secondAttribute="bottom" constant="10" id="xUt-Z4-Phh"/>
+                            <constraint firstItem="AXs-VI-EJJ" firstAttribute="top" secondItem="h7x-hr-Dp4" secondAttribute="bottom" id="yWb-La-xYO"/>
                             <constraint firstAttribute="bottomMargin" secondItem="AXs-VI-EJJ" secondAttribute="bottom" constant="-77" id="zEk-k9-wo6"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="4gr-G6-6kF"/>
+                                <exclude reference="CUh-ac-Sme"/>
+                                <exclude reference="RnX-H1-fVc"/>
                                 <exclude reference="gYL-Xe-ga5"/>
+                                <exclude reference="kKa-wj-ztK"/>
+                                <exclude reference="kh4-5F-8RJ"/>
                                 <exclude reference="qe7-Fe-Svv"/>
                                 <exclude reference="xUt-Z4-Phh"/>
                                 <exclude reference="zEk-k9-wo6"/>
@@ -66,6 +76,10 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="noteContentTextView" destination="AXs-VI-EJJ" id="GsV-fj-JyH"/>
+                        <outlet property="noteTitleTextField" destination="h7x-hr-Dp4" id="RZE-Os-9y7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vAU-SB-u1k" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="Uuc-fo-aEJ" userLabel="Exit" sceneMemberID="exit"/>
